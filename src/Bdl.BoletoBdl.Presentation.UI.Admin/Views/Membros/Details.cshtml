@@ -1,0 +1,115 @@
+﻿@model Bdl.BoletoBdl.Application.ViewModels.MembroViewModel
+
+@{
+    ViewBag.Title = "Detalhes do Membro";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="container">
+    <div class="row">
+        <div class="">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">@Model.Nome</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center"> <img src="http://www.berlinda.org/de/wp-content/uploads/2013/05/Fernando-Pessoa.jpg" alt="@Model.Nome" class="img-circle img-responsive"> </div>
+
+                        <div class=" col-md-9 col-lg-9 ">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td>Apelido</td>
+                                        <td>@Model.Apelido<td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail</td>
+                                        <td><a href="mailto:@Model.Email">@Model.Email</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data de Nascimento</td>
+                                        <td>@Model.Nascimento.ToString("d")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data de Cadastro</td>
+                                        <td>@Model.CriadoEm.ToString("d")</td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <td>CPF</td>
+                                        <td>@Model.CPF</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RG</td>
+                                        <td>@Model.RG<td>
+                                    </tr>
+                                    <tr>
+                                        <td>CNH</td>
+                                        <td>@Model.CNH<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Categoria CNH</td>
+                                        <td>@Model.CategoriaCNH<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tipo Sangúineio</td>
+                                        <td>@Model.TipoSanguineo<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naturalidade</td>
+                                        <td>@Model.Naturalidade<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estado Civil</td>
+                                        <td>@Model.EstadoCivil<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pai</td>
+                                        <td>@Model.Pai<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mãe</td>
+                                        <td>@Model.Mae<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade Profissional</td>
+                                        <td>@Model.AtividadeProfissional<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Padrinho</td>
+                                        <td>@Model.Padrinho<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Graduação</td>
+                                        <td>@Model.Graduacao.Nome<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data de Admissão</td>
+                                        <td>@Model.DataAdmissao<td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ativo</td>
+                                        <td>@Html.CheckBoxFor(model => model.Ativo)</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="@Url.Action("Edit", "Membros", new {id = Model.MembroId})" data-modal="" class="btn btn-primary">
+                        <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Membros", new { id = Model.MembroId })" data-modal="" class="btn btn-danger">
+                        <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                    </a>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

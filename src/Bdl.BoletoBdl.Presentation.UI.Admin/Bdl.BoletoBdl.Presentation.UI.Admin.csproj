@@ -172,9 +172,11 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContatoTiposController.cs" />
     <Compile Include="Controllers\GraduacoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -245,6 +247,18 @@
     <Content Include="Views\Graduacoes\Details.cshtml" />
     <Content Include="Views\Graduacoes\Edit.cshtml" />
     <Content Include="Views\Graduacoes\Index.cshtml" />
+    <Content Include="Views\Membros\Delete.cshtml" />
+    <Content Include="Views\Membros\Details.cshtml" />
+    <Content Include="Views\Membros\Edit.cshtml" />
+    <Content Include="Views\Membros\Index.cshtml" />
+    <Content Include="Views\Membros\Create.cshtml" />
+    <Content Include="Views\ContatoTipos\Create.cshtml" />
+    <Content Include="Views\ContatoTipos\Delete.cshtml" />
+    <Content Include="Views\ContatoTipos\Details.cshtml" />
+    <Content Include="Views\ContatoTipos\Edit.cshtml" />
+    <Content Include="Views\ContatoTipos\Index.cshtml" />
+    <Content Include="Views\Membros\_EnderecoList.cshtml" />
+    <Content Include="Views\Membros\_DadosEndereco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

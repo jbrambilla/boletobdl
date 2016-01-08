@@ -27,6 +27,7 @@ namespace Bdl.BoletoBdl.Infra.CrossCutting.IoC
             // APP
             container.Register<IMembroAppService, MembroAppService>(Lifestyle.Scoped);
             container.Register<IGraduacaoAppService, GraduacaoAppService>(Lifestyle.Scoped);
+            container.Register<IContatoTipoAppService, ContatoTipoAppService>(Lifestyle.Scoped);
 
             // Domain
             container.Register<IMembroService, MembroService>(Lifestyle.Scoped);

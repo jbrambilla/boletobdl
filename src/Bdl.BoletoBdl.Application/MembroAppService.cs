@@ -33,25 +33,25 @@ namespace Bdl.BoletoBdl.Application
 
             BeginTransaction();
             var membroReturn = _membroService.Add(membro);
-            var membroReturnViewModel = Mapper.Map<Membro, MembroEnderecoViewModel>(membroReturn);
+            membroEnderecoViewModel = Mapper.Map<Membro, MembroEnderecoViewModel>(membroReturn);
             Commit();
 
-            return membroReturnViewModel;
+            return membroEnderecoViewModel;
         }
 
         public MembroViewModel GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Membro, MembroViewModel>(_membroService.GetById(id));
         }
 
         public MembroViewModel GetByCpf(string cpf)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Membro, MembroViewModel>(_membroService.GetByCpf(cpf));
         }
 
         public MembroViewModel GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Membro, MembroViewModel>(_membroService.GetByEmail(email));
         }
 
         public IEnumerable<MembroViewModel> GetAll()
@@ -61,52 +61,95 @@ namespace Bdl.BoletoBdl.Application
 
         public MembroViewModel Update(MembroViewModel membroViewModel)
         {
-            throw new NotImplementedException();
+            BeginTransaction();
+            _membroService.Update(Mapper.Map<MembroViewModel, Membro>(membroViewModel));
+            Commit();
+            return membroViewModel;
         }
 
         public void Remove(Guid id)
         {
-            throw new NotImplementedException();
+            BeginTransaction();
+            _membroService.Remove(id);
+            Commit();
         }
 
         public EnderecoViewModel AddEndereco(EnderecoViewModel enderecoViewModel)
         {
-            throw new NotImplementedException();
+            var endereco = Mapper.Map<EnderecoViewModel, Endereco>(enderecoViewModel);
+
+            BeginTransaction();
+            _membroService.AddEndereco(endereco);
+            Commit();
+
+            return enderecoViewModel;
         }
 
         public EnderecoViewModel UpdateEndereco(EnderecoViewModel enderecoViewModel)
         {
-            throw new NotImplementedException();
+            var endereco = Mapper.Map<EnderecoViewModel, Endereco>(enderecoViewModel);
+
+            BeginTransaction();
+            _membroService.UpdateEndereco(endereco);
+            Commit();
+
+            return enderecoViewModel;
         }
 
         public EnderecoViewModel GetEnderecoById(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Endereco, EnderecoViewModel>(_membroService.GetEnderecoById(id));
         }
 
         public void RemoveEndereco(Guid id)
         {
-            throw new NotImplementedException();
+            BeginTransaction();
+            _membroService.RemoveEndereco(id);
+            Commit();
         }
 
         public ContatoViewModel AddContato(ContatoViewModel contatoViewModel)
         {
-            throw new NotImplementedException();
+            var contato = Mapper.Map<ContatoViewModel, Contato>(contatoViewModel);
+
+            BeginTransaction();
+            _membroService.AddContato(contato);
+            Commit();
+
+            return contatoViewModel;
         }
 
         public ContatoViewModel UpdateContato(ContatoViewModel contatoViewModel)
         {
-            throw new NotImplementedException();
+            var contato = Mapper.Map<ContatoViewModel, Contato>(contatoViewModel);
+
+            BeginTransaction();
+            _membroService.UpdateContato(contato);
+            Commit();
+
+            return contatoViewModel;
         }
 
         public ContatoViewModel GetContatoById(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Contato, ContatoViewModel>(_membroService.GetContatoById(id));
         }
 
         public void RemoveContato(Guid id)
         {
-            throw new NotImplementedException();
+            BeginTransaction();
+            _membroService.RemoveContato(id);
+            Commit();
+        }
+
+        public IEnumerable<GraduacaoViewModel> GetAllGraduacoes()
+        {
+            return  Mapper.Map<IEnumerable<Graduacao>, IEnumerable<GraduacaoViewModel>>(_membroService.GetAllGraduacoes());
+        }
+
+        public IEnumerable<ContatoTipoViewModel> GetAllContatoTipo()
+        {
+            return Mapper.Map<IEnumerable<ContatoTipo>, IEnumerable<ContatoTipoViewModel>>(_membroService.GetAllContatoTipo());
         }
 
         public void Dispose()
@@ -114,5 +157,8 @@ namespace Bdl.BoletoBdl.Application
             _membroService.Dispose();
             GC.SuppressFinalize(this);
         }
+
+
+
     }
 }

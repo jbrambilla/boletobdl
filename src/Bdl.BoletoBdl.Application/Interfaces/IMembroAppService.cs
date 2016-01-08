@@ -26,5 +26,8 @@ namespace Bdl.BoletoBdl.Application.Interfaces
         ContatoViewModel UpdateContato(ContatoViewModel contatoViewModel);
         ContatoViewModel GetContatoById(Guid id);
         void RemoveContato(Guid id);
+
+        IEnumerable<GraduacaoViewModel> GetAllGraduacoes();
+        IEnumerable<ContatoTipoViewModel> GetAllContatoTipo();
     }
 }

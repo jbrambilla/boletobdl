@@ -30,5 +30,7 @@ namespace Bdl.BoletoBdl.Presentation.UI.Admin.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<Bdl.BoletoBdl.Application.ViewModels.ContatoTipoViewModel> ContatoTipoViewModels { get; set; }
+
     }
 }

@@ -26,5 +26,8 @@ namespace Bdl.BoletoBdl.Domain.Interfaces.Services
         Contato UpdateContato(Contato contato);
         Contato GetContatoById(Guid id);
         void RemoveContato(Guid id);
+
+        IEnumerable<Graduacao> GetAllGraduacoes();
+        IEnumerable<ContatoTipo> GetAllContatoTipo();
     }
 }

@@ -14,12 +14,21 @@ namespace Bdl.BoletoBdl.Domain.Services
         private readonly IMembroRepository _membroRepository;
         private readonly IEnderecoRepository _enderecoRepository;
         private readonly IContatoRepository _contatoRepository;
+        private readonly IGraduacaoRepository _graduacaoRepository;
+        private readonly IContatoTipoRepository _contatoTipoRepository;
 
-        public MembroService(IMembroRepository membroRepository, IEnderecoRepository enderecoRepository, IContatoRepository contatoRepository)
+        public MembroService(
+            IMembroRepository membroRepository, 
+            IEnderecoRepository enderecoRepository, 
+            IContatoRepository contatoRepository, 
+            IGraduacaoRepository graduacaoRepository, 
+            IContatoTipoRepository contatoTipoRepository)
         {
             _membroRepository = membroRepository;
             _enderecoRepository = enderecoRepository;
             _contatoRepository = contatoRepository;
+            _graduacaoRepository = graduacaoRepository;
+            _contatoTipoRepository = contatoTipoRepository;
         }
 
         public Membro Add(Membro membro)
@@ -97,10 +106,24 @@ namespace Bdl.BoletoBdl.Domain.Services
             _contatoRepository.Remove(id);
         }
 
+        public IEnumerable<Graduacao> GetAllGraduacoes()
+        {
+            return _graduacaoRepository.GetAll();
+        }
+
+
+        public IEnumerable<ContatoTipo> GetAllContatoTipo()
+        {
+            return _contatoTipoRepository.GetAll();
+        }
+
         public void Dispose()
         {
             _membroRepository.Dispose();
             GC.SuppressFinalize(this);
         }
+
+
+
     }
 }

@@ -47,7 +47,9 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="ContatoTipoAppService.cs" />
     <Compile Include="GraduacaoAppService.cs" />
+    <Compile Include="Interfaces\IContatoTipoAppService.cs" />
     <Compile Include="Interfaces\IGraduacaoAppService.cs" />
     <Compile Include="Interfaces\IMembroAppService.cs" />
     <Compile Include="MembroAppService.cs" />
