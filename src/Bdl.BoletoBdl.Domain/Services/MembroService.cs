@@ -1,6 +1,7 @@
 ﻿using Bdl.BoletoBdl.Domain.Entities;
 using Bdl.BoletoBdl.Domain.Interfaces.Repository;
 using Bdl.BoletoBdl.Domain.Interfaces.Services;
+using Bdl.BoletoBdl.Domain.Validations.Membros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,18 @@ namespace Bdl.BoletoBdl.Domain.Services
 
         public Membro Add(Membro membro)
         {
+            if (!membro.IsValid())
+            {
+                return membro;
+            }
+
+            membro.ValidationResult = new MembroAptoParaCadastroValidation(_membroRepository).Validate(membro);
+            if (!membro.ValidationResult.IsValid)
+            {
+                return membro;
+            }
+            
+
             return _membroRepository.Add(membro);
         }
 
@@ -58,6 +71,11 @@ namespace Bdl.BoletoBdl.Domain.Services
 
         public Membro Update(Membro membro)
         {
+            if (!membro.IsValid())
+            {
+                return membro;
+            }
+
             return _membroRepository.Update(membro);
         }
 

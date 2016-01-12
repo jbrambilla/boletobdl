@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DomainValidation">
+      <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net45\DomainValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SimpleInjector">
       <HintPath>..\..\packages\SimpleInjector.3.1.2\lib\net45\SimpleInjector.dll</HintPath>
@@ -259,6 +262,17 @@
     <Content Include="Views\ContatoTipos\Index.cshtml" />
     <Content Include="Views\Membros\_EnderecoList.cshtml" />
     <Content Include="Views\Membros\_DadosEndereco.cshtml" />
+    <Content Include="Views\Membros\_ContatoList.cshtml" />
+    <Content Include="Views\Membros\_DadosContato.cshtml" />
+    <Content Include="Views\Membros\_Endereco.cshtml" />
+    <Content Include="Views\Membros\_Contato.cshtml" />
+    <Content Include="Views\Membros\_AdicionarEndereco.cshtml" />
+    <Content Include="Views\Membros\_AdicionarContato.cshtml" />
+    <Content Include="Views\Membros\_AtualizarEndereco.cshtml" />
+    <Content Include="Views\Membros\_AtualizarContato.cshtml" />
+    <Content Include="Views\Membros\_DeletarEndereco.cshtml" />
+    <Content Include="Views\Membros\_DeletarContato.cshtml" />
+    <Content Include="Views\Shared\_ErrorSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

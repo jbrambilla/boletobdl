@@ -17,6 +17,9 @@ namespace Bdl.BoletoBdl.Infra.Data.EntityConfig
             HasRequired(m => m.Graduacao)
                 .WithMany(g => g.MembroList)
                 .HasForeignKey(m => m.GraduacaoId);
+
+            Ignore(m => m.ValidationResult);
+
         }
     }
 }

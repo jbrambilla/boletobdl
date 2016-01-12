@@ -1,0 +1,29 @@
+﻿@model Bdl.BoletoBdl.Application.ViewModels.ContatoViewModel
+
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ContatoTipoId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ContatoTipo.Nome)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Telefone)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Telefone)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Descricao)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Descricao)
+    </dd>
+
+</dl>

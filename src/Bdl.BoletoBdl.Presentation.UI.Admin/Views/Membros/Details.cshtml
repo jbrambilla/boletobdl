@@ -15,7 +15,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 col-lg-3 " align="center"> <img src="http://www.berlinda.org/de/wp-content/uploads/2013/05/Fernando-Pessoa.jpg" alt="@Model.Nome" class="img-circle img-responsive"> </div>
-
+                        
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
                                 <tbody>
@@ -90,19 +90,26 @@
                                     </tr>
                                     <tr>
                                         <td>Ativo</td>
-                                        <td>@Html.CheckBoxFor(model => model.Ativo)</td>
+                                        <td>@Html.CheckBoxFor(model => model.Ativo, new { disabled = ""})</td>
                                     </tr>
-
+                                    <tr>
+                                        <td>Endereços</td>
+                                        <td><a href="@Url.Action("ListarEnderecos", new { id = Model.MembroId })" data-modal="">listar todos</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contatos</td>
+                                        <td><a href="@Url.Action("ListarContatos", new { id = Model.MembroId })" data-modal="">listar todos</a></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="@Url.Action("Edit", "Membros", new {id = Model.MembroId})" data-modal="" class="btn btn-primary">
+                    <a href="@Url.Action("Edit", "Membros", new {id = Model.MembroId})" class="btn btn-primary">
                         <span title="Editar" class="glyphicon glyphicon-pencil"></span>
                     </a>
-                    <a href="@Url.Action("Delete", "Membros", new { id = Model.MembroId })" data-modal="" class="btn btn-danger">
+                    <a href="@Url.Action("Delete", "Membros", new { id = Model.MembroId })" class="btn btn-danger">
                         <span title="Excluir" class="glyphicon glyphicon-trash"></span>
                     </a>
                     @Html.ActionLink("Back to List", "Index")
@@ -112,4 +119,29 @@
     </div>
 </div>
 
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
 
+<script type="text/javascript">
+
+        $(function () {
+            $.ajaxSetup({ cache: false });
+
+            $("a[data-modal]").on("click", function (e) {
+                $('#myModalContent').load(this.href, function () {
+                    $('#myModal').modal({
+                        /*backdrop: 'static',*/
+                        keyboard: true
+                    }, 'show');
+                    bindForm(this);
+                });
+                return false;
+            });
+        });
+
+</script>

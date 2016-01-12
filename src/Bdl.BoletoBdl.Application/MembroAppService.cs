@@ -32,9 +32,14 @@ namespace Bdl.BoletoBdl.Application
             membro.ContatoList.Add(contato);
 
             BeginTransaction();
+
             var membroReturn = _membroService.Add(membro);
             membroEnderecoViewModel = Mapper.Map<Membro, MembroEnderecoViewModel>(membroReturn);
-            Commit();
+
+            if (membroReturn.ValidationResult.IsValid)
+            {
+                Commit();
+            }
 
             return membroEnderecoViewModel;
         }
@@ -62,8 +67,15 @@ namespace Bdl.BoletoBdl.Application
         public MembroViewModel Update(MembroViewModel membroViewModel)
         {
             BeginTransaction();
-            _membroService.Update(Mapper.Map<MembroViewModel, Membro>(membroViewModel));
-            Commit();
+
+            var membroReturn = _membroService.Update(Mapper.Map<MembroViewModel, Membro>(membroViewModel));
+            membroViewModel = Mapper.Map<Membro, MembroViewModel>(membroReturn);
+
+            if (membroReturn.ValidationResult.IsValid)
+            {
+                Commit();
+            }
+
             return membroViewModel;
         }
 

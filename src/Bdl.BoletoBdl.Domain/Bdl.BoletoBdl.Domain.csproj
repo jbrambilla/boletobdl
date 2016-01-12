@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DomainValidation">
+      <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net45\DomainValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +54,20 @@
     <Compile Include="Services\ContatoTipoService.cs" />
     <Compile Include="Services\GraduacaoService.cs" />
     <Compile Include="Services\MembroService.cs" />
+    <Compile Include="Specifications\Membros\MembroDevePossuirCPFUnicoSpecification.cs" />
+    <Compile Include="Specifications\Membros\MembroDevePossuirEmailUnicoSpecification.cs" />
+    <Compile Include="Specifications\Membros\MembroDeveSerMaiorDeIdadeSpecification.cs" />
+    <Compile Include="Specifications\Membros\MembroDeveTerCpfValidoSpecification.cs" />
+    <Compile Include="Specifications\Membros\MembroDeveTerEmailValidoSpecification.cs" />
+    <Compile Include="Specifications\Membros\MembroDeveTerUmEnderecoSpecification.cs" />
+    <Compile Include="Validations\Datas\MaioridadeValidation.cs" />
+    <Compile Include="Validations\Documentos\CPFValidation.cs" />
+    <Compile Include="Validations\Documentos\EmailValidation.cs" />
+    <Compile Include="Validations\Membros\MembroAptoParaCadastroValidation.cs" />
+    <Compile Include="Validations\Membros\MembroEstaConsistenteValidation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

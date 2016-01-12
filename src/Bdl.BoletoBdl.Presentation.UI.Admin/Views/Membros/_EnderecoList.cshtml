@@ -82,7 +82,51 @@
 </div>
 <div>
     <div class="form-group">
-        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
-        @Html.ActionLink("Novo Endereço", "AdicionarEndereco", "Clientes", new { id = ViewBag.ClienteId }, new { @class = "btn btn-primary", data_modal = "" })
+        @Html.ActionLink("Novo Endereço", "AdicionarEndereco", "Membros", new { id = ViewBag.MembroId }, new { @class = "btn btn-primary", data_modal = "" })
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+
+
+        $(function () {
+            $.ajaxSetup({ cache: false });
+
+            $("a[data-modal]").on("click", function (e) {
+                $('#myModalContent').load(this.href, function () {
+                    $('#myModal').modal({
+                        /*backdrop: 'static',*/
+                        keyboard: true
+                    }, 'show');
+                    bindForm(this);
+                });
+                return false;
+            });
+        });
+
+        function bindForm(dialog) {
+            $('form', dialog).submit(function () {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        if (result.success) {
+                            $('#myModal').modal('hide');
+                            if (result.replacetarget == "contato") {
+                                $('#replacetargetContato').load(result.url);
+                            } else if (result.replacetarget == "endereco") {
+                                $('#replacetargetEndereco').load(result.url); // Carrega o resultado HTML para a div demarcada
+                            }
+                        } else {
+                            $('#myModalContent').html(result);
+                            bindForm(dialog);
+                        }
+                    }
+                });
+                return false;
+            });
+        }
+</script>

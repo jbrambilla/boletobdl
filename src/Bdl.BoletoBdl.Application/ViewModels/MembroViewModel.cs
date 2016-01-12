@@ -51,8 +51,7 @@ namespace Bdl.BoletoBdl.Application.ViewModels
         [DisplayName("Categoria da CNH")]
         public string CategoriaCNH { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Tipo Sanguíneo")]
-        [MaxLength(3, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Selecione o Tipo Sanguíneo")]
         [DisplayName("Tipo Sanguíneo")]
         public string TipoSanguineo { get; set; }
 
@@ -61,9 +60,7 @@ namespace Bdl.BoletoBdl.Application.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string Naturalidade { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Estado Civil")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [Required(ErrorMessage = "Selecione o Estado Civil")]
         [DisplayName("Estado Civil")]
         public string EstadoCivil { get; set; }
 
@@ -118,5 +115,8 @@ namespace Bdl.BoletoBdl.Application.ViewModels
 
         public ICollection<EnderecoViewModel> EnderecoList { get; set; }
         public ICollection<ContatoViewModel> ContatoList { get; set; }
+
+        [ScaffoldColumn(false)]
+        public DomainValidation.Validation.ValidationResult ValidationResult { get; set; }
     }
 }

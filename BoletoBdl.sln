@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdl.BoletoBdl.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdl.BoletoBdl.Presentation.UI.Admin", "src\Bdl.BoletoBdl.Presentation.UI.Admin\Bdl.BoletoBdl.Presentation.UI.Admin.csproj", "{913BD016-8CE6-4E2F-8785-2C755155666D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdl.BoletoBdl.Domain.Tests", "tests\Bdl.BoletoBdl.Domain.Tests\Bdl.BoletoBdl.Domain.Tests.csproj", "{FB2776E9-D938-4890-9AE0-C02D1823EAFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{913BD016-8CE6-4E2F-8785-2C755155666D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{913BD016-8CE6-4E2F-8785-2C755155666D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{913BD016-8CE6-4E2F-8785-2C755155666D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2776E9-D938-4890-9AE0-C02D1823EAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2776E9-D938-4890-9AE0-C02D1823EAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2776E9-D938-4890-9AE0-C02D1823EAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2776E9-D938-4890-9AE0-C02D1823EAFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,6 @@ Global
 		{32CB63F8-06B0-4AF6-A431-C09A6487BB59} = {3D0FDEE1-DD6A-4EA9-9DFE-3BCB968CE2E0}
 		{38BE5A4B-7D7E-4DB5-9D39-A5C46E80BC87} = {053A95F3-41AD-4A07-B026-D9A39711C194}
 		{913BD016-8CE6-4E2F-8785-2C755155666D} = {29055601-ADCF-47D6-88D9-93515A7CF75A}
+		{FB2776E9-D938-4890-9AE0-C02D1823EAFF} = {C2E8A560-ABAB-4D85-9EE5-57DAD68E4D2E}
 	EndGlobalSection
 EndGlobal

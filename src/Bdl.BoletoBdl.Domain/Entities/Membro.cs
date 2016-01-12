@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bdl.BoletoBdl.Domain.Validations.Membros;
+using DomainValidation.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,5 +45,13 @@ namespace Bdl.BoletoBdl.Domain.Entities
         public virtual Graduacao Graduacao { get; set; }
         public virtual ICollection<Endereco> EnderecoList { get; set; }
         public virtual ICollection<Contato> ContatoList { get; set; }
+
+        public ValidationResult ValidationResult { get; set; }    
+
+        public bool IsValid()
+        {
+            ValidationResult = new MembroEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
     }
 }

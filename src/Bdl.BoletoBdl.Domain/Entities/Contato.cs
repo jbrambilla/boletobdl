@@ -20,7 +20,7 @@ namespace Bdl.BoletoBdl.Domain.Entities
         public string Descricao { get; set; }
         public string Telefone { get; set; }
 
-        public virtual ContatoTipo Tipo { get; set; }
+        public virtual ContatoTipo ContatoTipo { get; set; }
         public virtual Membro Membro { get; set; }
     }
 }

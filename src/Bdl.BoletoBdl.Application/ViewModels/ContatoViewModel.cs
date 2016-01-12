@@ -29,9 +29,12 @@ namespace Bdl.BoletoBdl.Application.ViewModels
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         [DisplayName("Número")]
-        public string Numero { get; set; }
+        public string Telefone { get; set; }
 
         [ScaffoldColumn(false)]
         public Guid MembroId { get; set; }
+
+        [ScaffoldColumn(false)]
+        public ContatoTipoViewModel ContatoTipo { get; set; }
     }
 }

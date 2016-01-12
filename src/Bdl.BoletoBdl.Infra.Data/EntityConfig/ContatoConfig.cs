@@ -18,7 +18,7 @@ namespace Bdl.BoletoBdl.Infra.Data.EntityConfig
                 .WithMany(m => m.ContatoList)
                 .HasForeignKey(c => c.MembroId);
 
-            HasRequired(c => c.Tipo)
+            HasRequired(c => c.ContatoTipo)
                 .WithMany(t => t.ContatoList)
                 .HasForeignKey(c => c.ContatoTipoId);
         }
